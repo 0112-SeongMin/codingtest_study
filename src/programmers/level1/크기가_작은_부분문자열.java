@@ -7,6 +7,7 @@ public class 크기가_작은_부분문자열 {
         System.out.println(solution("12213","12511"));
     }
 
+    // 문제 : https://school.programmers.co.kr/learn/courses/30/lessons/147355
     public static int solution(String t, String p) {
         int answer = 0; // p보다 작은 값 개수
         int pl = p.length(); // p 문자열 길이
