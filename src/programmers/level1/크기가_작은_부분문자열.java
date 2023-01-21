@@ -8,19 +8,16 @@ public class 크기가_작은_부분문자열 {
     }
 
     public static int solution(String t, String p) {
-        int answer = 0;
-        int pl = p.length();
-        int tl = t.length();
-        long pint = Long.parseLong(p);
-        long[] list = new long[tl-pl+1];
+        int answer = 0; // p보다 작은 값 개수
+        int pl = p.length(); // p 문자열 길이
+        int tl = t.length(); // t 문자열 길이
+        long plong = Long.parseLong(p); // p 값(long으로 변환)
+        long[] list = new long[tl-pl+1]; // t 를 p길이 기준으로 자른 데이터 배열
 
-        for(int i=0; i+pl<=tl; i++) {
+        // list 배열 데이터와 p 값과 비교하여 작은 값이 있으면 answer 1씩 증가
+        for(int i=0; i<list.length; i++) {
             list[i] = Long.parseLong(t.substring(i, pl+i));
-        }
-        System.out.println(Arrays.toString(list));
-
-        for(long i : list) {
-            if(pint >= i) {
+            if(plong >= list[i]) {
                 answer++;
             }
         }
